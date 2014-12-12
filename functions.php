@@ -43,7 +43,7 @@ function strapboot_body_class($classes)
 function strapboot_wp_head()
 {
 	echo '<style>' . PHP_EOL;
-	echo 'body{ padding-top: 30px !important; }' . PHP_EOL;
+	echo 'body{ padding-top: 75px !important; }' . PHP_EOL;
 	echo 'body.body-logged-in .navbar-fixed-top{ top: 28px !important; }' . PHP_EOL;
 	echo 'body.logged-in .navbar-fixed-top{ top: 28px !important; }' . PHP_EOL;
 	echo '</style>' . PHP_EOL;
@@ -158,7 +158,7 @@ function wp_check_home()
 		add_filter('the_content', 'tokenTruncate');
 }
 
-function tokenTruncate($string, $your_desired_width = 200)
+function tokenTruncate($string, $your_desired_width = 300)
 {
 	$parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
 	$parts_count = count($parts);
@@ -173,4 +173,35 @@ function tokenTruncate($string, $your_desired_width = 200)
 	}
 
 	return implode(array_slice($parts, 0, $last_part));
+}
+
+function bootstrap_pagination( $query=null ) {
+	global $wp_query;
+	$query = $query ? $query : $wp_query;
+	$length = 999999999;
+
+	$paginate = paginate_links(
+		array(
+			'base' => str_replace( $length, '%#%', esc_url( get_pagenum_link( $length ) ) ),
+			'type' => 'array',
+			'total' => $query->max_num_pages,
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'prev_text' => __('Previous'),
+			'next_text' => __('Next'),
+		)
+	);
+	if ($query->max_num_pages > 1) :
+		?>
+		<ul class="pagination pagination-centered">
+			<?php
+			foreach ( $paginate as $page ) {
+				if(!preg_match('/^<span class="page-numbers dots">/',$page)){
+					echo '<li>' . $page . '</li>';
+				}
+			}
+			?>
+		</ul>
+	<?php
+	endif;
 }
