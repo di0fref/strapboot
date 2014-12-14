@@ -1,6 +1,6 @@
 
 	<h4 id="comments">
-	<i class="icon-comments-alt icon-large"></i>&nbsp; <?php comments_number('No Comments', '1 Comment', '% Comments' ); ?> <a class="btn btn-sm btn-default pull-right" href="#respond"><i class="icon-plus-sign"></i>&nbsp; Comment</a>
+	<i class="fa fa-comments-o"></i>&nbsp; <?php comments_number('No Comments', '1 Comment', '% Comments' ); ?> <a class="btn btn-sm btn-default pull-right" href="#respond"><i class="fa fa-plus"></i>&nbsp; Comment</a>
 </h4>
 
 <ol class="comment-list media-list">

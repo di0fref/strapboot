@@ -18,7 +18,7 @@ footer {
 	font-size: 42px;
 }
 #main article p, #main article li, #main article dt, #main article dd, #main article td, #main article address {
-	font-size: 18px;
+	font-size: 16px;
 	letter-spacing: -.02em;
 	word-spacing: .05em;
 	color: #555;
@@ -56,14 +56,15 @@ footer {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Condensed', sans-serif !important;
-	font-weight: 500 !important;
+	font-weight: 700 !important;
 	color: #222 !important;
 }
 h4, h5, h6 {
 	font-size: 22px;
 	color: #666;
 }
-#comsments, #comments li {
+
+#comments, #comments li {
 	margin: 0;
 	padding: 0;
 }
@@ -72,7 +73,9 @@ h4, h5, h6 {
 	list-style: none;
 }
 h4#comments {
-	font-size: 30px;
+	font-size: 32px;
+	color: #666 !important;
+	margin-bottom: 10px;
 }
 .comment-list article {
 	width: 100%;
@@ -100,7 +103,7 @@ h4#comments {
 	margin-bottom: 10px;
 }
 code {
-	font-size: 80%;
+	font-size: 90%;
 }
 
 #sidebar {

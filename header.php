@@ -16,9 +16,6 @@
 
 	<title><?php wp_title($sep = ''); ?> | <?php bloginfo('name');?></title>
 
-	<!-- Bootstrap CSS file -->
-	<link href="<?php bloginfo('template_directory'); ?>/lib/bootstrap-3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="<?php bloginfo('template_directory'); ?>/lib/bootstrap-3.0.3/css/bootstrap-theme.min.css" rel="stylesheet"/>
 	<link rel='stylesheet' id='google-fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Roboto+Condensed:400italic,700italic,400,700' type='text/css' media='all' />
 	<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

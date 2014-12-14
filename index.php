@@ -18,7 +18,7 @@
 					<h2 class="media-heading" id="post-636">
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					</h2>
-					<?php the_content(); ?>
+					<?php the_excerpt(); ?>
 					<?php edit_post_link(); ?>
 				</div>
 			</article>

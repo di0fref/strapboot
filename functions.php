@@ -4,6 +4,21 @@ include_once ABSPATH . 'wp-includes/class-wp-customize-control.php';
 
 add_filter('body_class', 'strapboot_body_class');
 add_action('wp_head', 'strapboot_wp_head');
+add_action("wp_enqueue_scripts", "strapboot_enqueue_scripts");
+
+function strapboot_enqueue_scripts()
+{
+	wp_register_style('strapboot_awesome_fonts_min', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '', 'all');
+	wp_register_style('strapboot_bootstrap_min', get_template_directory_uri().'/lib/bootstrap-3.0.3/css/bootstrap.min.css', array(), '', 'all');
+	wp_register_style('strapboot_bootstrap_theme_min', get_template_directory_uri().'/lib/bootstrap-3.0.3/css/bootstrap-theme.min.css', array(), '', 'all');
+
+
+	wp_enqueue_style("strapboot_awesome_fonts_min");
+	wp_enqueue_style("strapboot_bootstrap_min");
+	wp_enqueue_style("strapboot_bootstrap_theme_min");
+
+}
+
 
 require_once('wp_bootstrap_navwalker.php');
 if (function_exists('register_sidebar')) {
@@ -21,11 +36,12 @@ if (function_exists('register_sidebar')) {
 	register_sidebar($args);
 }
 add_action('after_setup_theme', 'strapboot_setup');
-if (!function_exists('strapboot_setup')):
+if (!function_exists('strapboot_setup')) {
 	function strapboot_setup()
 	{
 		register_nav_menu('primary', __('Primary navigation', 'strapboot_main_menu'));
-	} endif;
+	}
+}
 
 
 add_theme_support('post-thumbnails');
@@ -112,7 +128,7 @@ function twbs_comment_format($comment, $args, $depth)
 {
 	$GLOBALS['comment'] = $comment; ?>
 
-<li <?php comment_class('media'); ?> id="comment-<?php comment_ID(); ?>">
+	<li <?php comment_class('media'); ?> id="comment-<?php comment_ID(); ?>">
 	<article>
 		<div class="comment-meta pull-left">
 			<?php echo get_avatar($comment, 96); ?>
@@ -136,6 +152,10 @@ function twbs_comment_format($comment, $args, $depth)
 	</article>
 <?php
 }
+function strapboot_excerpt_more( $more ) {
+	return '...';
+}
+add_filter('excerpt_more', 'strapboot_excerpt_more');
 
 add_filter('comment_reply_link', 'twbs_reply_link_class');
 function twbs_reply_link_class($class)
@@ -158,7 +178,7 @@ function wp_check_home()
 		add_filter('the_content', 'tokenTruncate');
 }
 
-function tokenTruncate($string, $your_desired_width = 300)
+function tokenTruncate($string, $your_desired_width = 30000)
 {
 	$parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
 	$parts_count = count($parts);
@@ -175,18 +195,19 @@ function tokenTruncate($string, $your_desired_width = 300)
 	return implode(array_slice($parts, 0, $last_part));
 }
 
-function bootstrap_pagination( $query=null ) {
+function bootstrap_pagination($query = null)
+{
 	global $wp_query;
 	$query = $query ? $query : $wp_query;
 	$length = 999999999;
 
 	$paginate = paginate_links(
 		array(
-			'base' => str_replace( $length, '%#%', esc_url( get_pagenum_link( $length ) ) ),
+			'base' => str_replace($length, '%#%', esc_url(get_pagenum_link($length))),
 			'type' => 'array',
 			'total' => $query->max_num_pages,
 			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
+			'current' => max(1, get_query_var('paged')),
 			'prev_text' => __('Previous'),
 			'next_text' => __('Next'),
 		)
@@ -195,8 +216,8 @@ function bootstrap_pagination( $query=null ) {
 		?>
 		<ul class="pagination pagination-centered">
 			<?php
-			foreach ( $paginate as $page ) {
-				if(!preg_match('/^<span class="page-numbers dots">/',$page)){
+			foreach ($paginate as $page) {
+				if (!preg_match('/^<span class="page-numbers dots">/', $page)) {
 					echo '<li>' . $page . '</li>';
 				}
 			}
