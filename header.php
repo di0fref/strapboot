@@ -19,7 +19,6 @@
 	<!-- Bootstrap CSS file -->
 	<link href="<?php bloginfo('template_directory'); ?>/lib/bootstrap-3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
 	<link href="<?php bloginfo('template_directory'); ?>/lib/bootstrap-3.0.3/css/bootstrap-theme.min.css" rel="stylesheet"/>
-	<link rel='stylesheet' id='font-awesome-css'  href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' type='text/css' media='all' />
 	<link rel='stylesheet' id='google-fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic|Roboto+Condensed:400italic,700italic,400,700' type='text/css' media='all' />
 	<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -39,7 +38,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<img class="navbar-brand" src="<?php bloginfo('template_directory'); ?>/images/logo_6.png">
-			<a class="navbar-brand" href="<?php bloginfo('siteurl'); ?>"><?php bloginfo('blog_name'); ?></a>
+			<a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('blog_name'); ?></a>
 
 		</div>
 		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
