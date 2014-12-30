@@ -8,8 +8,8 @@
 </ol>
 
 <ul class="pager">
-	<li><?php previous_comments_link('<i class="icon-chevron-left"></i>&nbsp; Older Comments'); ?></li>
-	<li><?php next_comments_link('Newer Comments &nbsp;<i class="icon-chevron-right"></i>'); ?></li>
+	<li><?php previous_comments_link('<i class="fa fa-chevron-left"></i>&nbsp; Older Comments'); ?></li>
+	<li><?php next_comments_link('Newer Comments &nbsp;<i class="fa fa-chevron-right"></i>'); ?></li>
 </ul>
 
 <?php if ( comments_open() ) : ?>

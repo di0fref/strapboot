@@ -18,8 +18,7 @@ footer {
 	font-size: 42px;
 }
 #main article p, #main article li, #main article dt, #main article dd, #main article td, #main article address {
-	font-size: 16px;
-	letter-spacing: -.02em;
+	/*font-size: 16px;*/
 	word-spacing: .05em;
 	color: #555;
 }
@@ -48,7 +47,7 @@ footer {
 	color: #aaaaaa;
 	font-size: 12px;
 	line-height: 20px;
-	margin: 12.5px 0 0;
+	margin: 12px 0 0;
 }
 
 .header_image{
@@ -56,11 +55,11 @@ footer {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto Condensed', sans-serif !important;
-	font-weight: 700 !important;
+	font-weight: 500 !important;
 	color: #222 !important;
 }
 h4, h5, h6 {
-	font-size: 22px;
+	/*font-size: 22px;*/
 	color: #666;
 }
 
@@ -73,7 +72,7 @@ h4, h5, h6 {
 	list-style: none;
 }
 h4#comments {
-	font-size: 32px;
+	/*font-size: 32px;*/
 	color: #666 !important;
 	margin-bottom: 10px;
 }
@@ -98,7 +97,7 @@ h4#comments {
 	white-space: normal;
 }
 #respond h4 {
-	font-size: 32px;
+	/*font-size: 32px;*/
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
@@ -107,9 +106,8 @@ code {
 }
 
 #sidebar {
-	font-size: 16px;
+	/*font-size: 16px;*/
 	color: #888;
-	letter-spacing: -.02em;
 	word-spacing: .05em;
 }
 a {
@@ -174,3 +172,4 @@ a {
 	-webkit-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
+

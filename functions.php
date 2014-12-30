@@ -8,14 +8,19 @@ add_action("wp_enqueue_scripts", "strapboot_enqueue_scripts");
 
 function strapboot_enqueue_scripts()
 {
-	wp_register_style('strapboot_awesome_fonts_min', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '', 'all');
-	wp_register_style('strapboot_bootstrap_min', get_template_directory_uri().'/lib/bootstrap-3.0.3/css/bootstrap.min.css', array(), '', 'all');
-	wp_register_style('strapboot_bootstrap_theme_min', get_template_directory_uri().'/lib/bootstrap-3.0.3/css/bootstrap-theme.min.css', array(), '', 'all');
-
+	wp_register_style('strapboot_awesome_fonts_min', get_template_directory_uri() . '/font-awesome/css/font-awesome.min.css', array(), '', 'all');
+	wp_register_style('strapboot_bootstrap_min', get_template_directory_uri() . '/lib/bootstrap-3.3.1/css/bootstrap.min.css', array(), '3.3.1', 'all');
+	wp_register_style('strapboot_bootstrap_theme_min', get_template_directory_uri() . '/lib/bootstrap-3.3.1/css/bootstrap-theme.min.css', array(), '3.3.1', 'all');
 
 	wp_enqueue_style("strapboot_awesome_fonts_min");
 	wp_enqueue_style("strapboot_bootstrap_min");
 	wp_enqueue_style("strapboot_bootstrap_theme_min");
+
+	wp_register_script('holder', get_template_directory_uri() . '/holder.js', array("jquery"), '2.4.1+f63aw', true);
+	wp_register_script('bootstrap', get_template_directory_uri() . '/lib/bootstrap-3.3.1/js/bootstrap.min.js', array("jquery"), '3.3.1', true);
+
+	wp_enqueue_script("bootstrap");
+	wp_enqueue_script("holder");
 
 }
 
@@ -145,16 +150,19 @@ function twbs_comment_format($comment, $args, $depth)
 			<?php } ?>
 			<?php comment_text(); ?>
 			<div class="reply pull-right">
-				<?php comment_reply_link(array_merge($args, array('reply_text' => __('<i class="icon-reply"></i>&nbsp; Reply'), 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+				<?php comment_reply_link(array_merge($args, array('reply_text' => __('<i class="fa fa-reply"></i>&nbsp; Reply'), 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 			</div>
 		</div>
 		<!-- .comment-content -->
 	</article>
 <?php
 }
-function strapboot_excerpt_more( $more ) {
+
+function strapboot_excerpt_more($more)
+{
 	return '...';
 }
+
 add_filter('excerpt_more', 'strapboot_excerpt_more');
 
 add_filter('comment_reply_link', 'twbs_reply_link_class');

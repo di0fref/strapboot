@@ -3,7 +3,7 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article
 				class="post-636 post type-post status-publish format-standard hentry category-plugins tag-jetpack tag-widgets media odd">
-				<a class="pull-left" href="http://wpsmackdown.com/list-jetpack-widget-php-class-names/">
+				<a class="pull-left" href="<?php the_permalink(); ?>">
 					<?php
 					if (has_post_thumbnail()) { // check if the post has a Post Thumbnail assigned to it.
 						the_post_thumbnail(array(120, 120), array("class" => "media-object img-thumbnail"));
@@ -19,6 +19,9 @@
 						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					</h2>
 					<?php the_excerpt(); ?>
+							<!--<i class="fa fa-comments-o"></i> <?php comments_popup_link( __( 'No Comments' ), __( '1 Comment' ), __( '% Comments' ), "comment_link has_icon" ); ?>-->
+							<i class="fa fa-clock-o"></i> <?php the_time('F j, Y H:i'); ?>
+
 					<?php edit_post_link(); ?>
 				</div>
 			</article>
