@@ -63,11 +63,11 @@ function strapboot_body_class($classes)
 
 function strapboot_wp_head()
 {
-	echo '<style>' . PHP_EOL;
-	echo 'body{ padding-top: 75px !important; }' . PHP_EOL;
-	echo 'body.body-logged-in .navbar-fixed-top{ top: 28px !important; }' . PHP_EOL;
-	echo 'body.logged-in .navbar-fixed-top{ top: 28px !important; }' . PHP_EOL;
-	echo '</style>' . PHP_EOL;
+	//echo '<style>' . PHP_EOL;
+	//echo 'body{ padding-top: 75px !important; }' . PHP_EOL;
+	//echo 'body.body-logged-in .navbar-fixed-top{ top: 28px !important; }' . PHP_EOL;
+	//echo 'body.logged-in .navbar-fixed-top{ top: 28px !important; }' . PHP_EOL;
+	//echo '</style>' . PHP_EOL;
 }
 
 /**

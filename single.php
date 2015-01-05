@@ -3,11 +3,6 @@
 		<h1><?php echo the_title()?></h1>
 		<div class="row">
 			<div class="col-sm-6 col-md-6">
-				<i class="fa fa-folder-open"></i> &nbsp;<?php the_category(', '); ?>
-				&nbsp;&nbsp;
-				<i class="fa fa-tags"></i> <?php the_tags(""); ?>
-			</div>
-			<div class="col-sm-6 col-md-6">
 				<i class="fa fa-comments-o"></i> <?php comments_popup_link( __( 'No Comments' ), __( '1 Comment' ), __( '% Comments' ), "comment_link has_icon" ); ?>
 				&nbsp;&nbsp;<i class="fa fa-clock-o"></i> <?php the_time('F j, Y H:i'); ?>
 

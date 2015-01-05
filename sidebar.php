@@ -1,7 +1,6 @@
 <div class="col-md-4">
 	<div class="mywell _well-sm" role="complementary" id="sidebar">
 		<div class="row">
-
 			<div class="ad_125_wrapper">
 				<div class="ad_125">
 					<a href="http://sv.888poker.com/?sr=743760&anid=fahlstadse">
@@ -35,5 +34,10 @@
 			</ul>
 		</div>
 		<?php dynamic_sidebar('sidebar-1'); ?>
+		<form class="navbar-form" role="search" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<div class="form-group">
+				<input type="text" class="form-control" name="s" id="s" placeholder="Search">
+			</div>
+		</form>
 	</div>
 </div>
